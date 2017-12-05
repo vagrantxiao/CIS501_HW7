@@ -44,10 +44,9 @@ public class ConvolutionTask extends RecursiveAction {
     public void compute() {
     	//ConvolutionTask(kernel, src, 0, src.height, dst);
         // TODO: fill in code here...
-    	if(this.numRows<10) {
+    	if(this.numRows<=10) {
     		convolute();
     		return;
-    		
     	}
     	
     	int split = this.numRows / 2;
@@ -64,10 +63,6 @@ public class ConvolutionTask extends RecursiveAction {
     	
         final int kernelWidthRadius = kernel[0].length >>> 1;
         final int kernelHeightRadius = kernel.length >>> 1;
-        System.out.println("this.startRow:"+this.startRow);
-        System.out.println("this.numRows:"+this.numRows);
-        System.out.println("srcPixels.width:"+srcPixels.width);
-        System.out.println("kernel.length"+kernel.length);
         for (int i = this.startRow; i < this.startRow + this.numRows; i++) {
             for (int j = 0; j < srcPixels.width; j++) {
 
