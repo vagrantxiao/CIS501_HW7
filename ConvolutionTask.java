@@ -47,6 +47,7 @@ public class ConvolutionTask extends RecursiveAction {
     	if(this.numRows<10) {
     		convolute();
     		return;
+    		
     	}
     	
     	int split = this.numRows / 2;
